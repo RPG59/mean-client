@@ -12,13 +12,13 @@ import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/
 })
 export class ProfileComponent implements OnInit {
   panelOpenState = false;
-  profileForm: FormGroup;
+  profileForm:FormGroup;
 
   constructor(public auth: AuthService,
               private fb: FormBuilder) {
   }
 
-  ngOnInit() {
+  ngOnInit(){
     this.initProfileForm();
   }
 
