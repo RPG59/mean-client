@@ -1,0 +1,13 @@
+<div class="login-wrapp">
+  <form class="login-form" [formGroup]="loginForm" (ngSubmit)="login()">
+    <mat-form-field class="example-full-width">
+      <input matInput formControlName="login" placeholder="Login">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput formControlName="password" placeholder="Password" type="password">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary">Primary</button>
+  </form>
+</div>

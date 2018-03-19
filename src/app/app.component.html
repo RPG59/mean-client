@@ -1,0 +1,8 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span class="user" *ngIf="auth.user?.login" [routerLink]="['/app/profile']">{{auth.user.login}}</span>
+    <span class="user" *ngIf="!auth.user?.login" [routerLink]="['/app/login']">Login</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

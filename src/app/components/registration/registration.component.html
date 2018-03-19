@@ -1,0 +1,21 @@
+<div class="reg-wrapp">
+  <form class="reg-form" [formGroup]="regForm" (ngSubmit)="registration()">
+    <mat-form-field>
+      <input matInput formControlName="login" placeholder="Login">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput formControlName="email" placeholder="Emali">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput formControlName="password" placeholder="Password" type="password">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput formControlName="rePassword" placeholder="Password" type="password">
+    </mat-form-field>
+
+    <button type="submit" mat-raised-button color="primary">Submit</button>
+  </form>
+</div>

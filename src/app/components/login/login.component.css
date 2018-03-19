@@ -1,0 +1,12 @@
+.login-wrapp {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid blue;
+  padding: 36px;
+}
