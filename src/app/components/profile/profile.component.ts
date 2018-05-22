@@ -1,9 +1,9 @@
-import {Component, NgModule, OnInit} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {RouterModule} from '@angular/router';
-import {AuthService} from '../../core/auth.service';
-import {MatExpansionModule, MatInputModule} from '@angular/material';
-import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
+import { Component, NgModule, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { AuthService } from '../../core/auth.service';
+import { MatExpansionModule, MatInputModule } from '@angular/material';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-profile',
@@ -12,13 +12,13 @@ import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/
 })
 export class ProfileComponent implements OnInit {
   panelOpenState = false;
-  profileForm:FormGroup;
+  profileForm: FormGroup;
 
   constructor(public auth: AuthService,
-              private fb: FormBuilder) {
+    private fb: FormBuilder) {
   }
 
-  ngOnInit(){
+  ngOnInit() {
     this.initProfileForm();
   }
 
@@ -37,7 +37,7 @@ export class ProfileComponent implements OnInit {
     ReactiveFormsModule,
     MatExpansionModule,
     MatInputModule,
-    RouterModule.forChild([{path: '', component: ProfileComponent}])
+    RouterModule.forChild([{ path: '', component: ProfileComponent }])
   ],
   exports: [
     RouterModule

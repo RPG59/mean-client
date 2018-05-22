@@ -1,10 +1,10 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {RouterModule, Router} from '@angular/router';
-import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
-import {MatInputModule} from '@angular/material';
-import {AuthService} from '../../core/auth.service';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule, Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { MatInputModule, MatButtonModule } from '@angular/material';
+import { AuthService } from '../../core/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -16,8 +16,8 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
 
   constructor(private fb: FormBuilder,
-              private auth: AuthService,
-              private router: Router) {
+    private auth: AuthService,
+    private router: Router) {
     this.loginForm = fb.group({
       login: ['', Validators.required],
       password: ['', Validators.required]
@@ -47,7 +47,8 @@ export class LoginComponent implements OnInit {
     CommonModule,
     ReactiveFormsModule,
     MatInputModule,
-    RouterModule.forChild([{path: '', component: LoginComponent}])
+    MatButtonModule,
+    RouterModule.forChild([{ path: '', component: LoginComponent }])
   ],
   exports: [
     RouterModule

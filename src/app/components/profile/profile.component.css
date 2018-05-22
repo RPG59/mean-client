@@ -1,0 +1,9 @@
+.container{
+  margin: auto;
+  width: 500px;
+}
+
+.table-item{
+  display: flex;
+  justify-content: space-between;
+}

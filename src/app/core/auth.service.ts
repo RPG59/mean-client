@@ -1,8 +1,9 @@
-import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Observable} from 'rxjs/Observable';
-import {map, filter, switchMap} from 'rxjs/operators';
-import {BehaviorSubject} from 'rxjs/BehaviorSubject';
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
+import { map, filter, switchMap } from 'rxjs/operators';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class AuthService {
@@ -12,7 +13,8 @@ export class AuthService {
   httpOptions: { headers: HttpHeaders };
   isUpdate$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,
+    private router: Router) {
     this.token = localStorage.getItem('token');
     console.log(this.token);
     this.httpOptions = {
@@ -64,6 +66,7 @@ export class AuthService {
     localStorage.setItem('token', null);
     this.token = null;
     this.user = null;
+    this.router.navigateByUrl('/app/login');
   }
 
   storedToken(token: string): void {

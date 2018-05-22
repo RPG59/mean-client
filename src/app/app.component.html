@@ -1,7 +1,18 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <span class="user" *ngIf="auth.user?.login" [routerLink]="['/app/profile']">{{auth.user.login}}</span>
-    <span class="user" *ngIf="!auth.user?.login" [routerLink]="['/app/login']">Login</span>
+    <div class="toolbar-container">
+      <div class="left-block">
+        <mat-icon [routerLink]="['/app']">home</mat-icon>
+      </div>
+      <div class="right-block">
+        <div class="user">
+          <mat-icon *ngIf="auth.user?.login" [routerLink]="['/app/profile']">account_circle</mat-icon>
+          <span class="user-login" *ngIf="auth.user?.login">{{auth.user.login}}</span>
+          <mat-icon *ngIf="!auth.user?.login" [routerLink]="['/app/login']">input</mat-icon>
+          <mat-icon *ngIf="auth.user?.login" (click)="auth.logout()">exit_to_app</mat-icon>
+        </div>
+      </div>
+    </div>
   </mat-toolbar-row>
 </mat-toolbar>
 
